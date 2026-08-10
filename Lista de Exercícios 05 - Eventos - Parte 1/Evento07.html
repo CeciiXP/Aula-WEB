@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <link href="eventos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Jogo Clique para Vencer!</h2>
+
+        <button id="botao1">
+            Clique aqui para VENCER!
+        </button>
+        <button id="botao2">
+            Clique aqui para PERDER!
+        </button>
+    </div>
+</body>
+
+<script>
+
+    const vencer = document.getElementById("botao1");
+    const perder = document.getElementById("botao2");
+
+    vencer.addEventListener("mouseover", function () {
+    document.getElementById("botao1").textContent = "Clique aqui para PERDER!";
+    document.getElementById("botao2").textContent = "Clique aqui para VENCER!";
+    });
+
+    vencer.addEventListener("mouseout", function () {
+    document.getElementById("botao1").textContent = "Clique aqui para VENCER!";
+    document.getElementById("botao2").textContent = "Clique aqui para PERDER!";
+    });
+
+    vencer.addEventListener("click", function () {
+    alert("Voce perdeu!");
+    });
+
+    perder.addEventListener("click", function () {
+    alert("Voce perdeu!");
+    });
+
+
+</script>
+
+
+</html>

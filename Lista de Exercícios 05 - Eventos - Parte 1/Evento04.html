@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Origem e Destino</title>
+    <link href="eventos.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="form-container">
+
+        <label for="n1">Número 1:</label>
+        <input type="text" id="n1">
+        <label for="n2">Número 2:</label>
+        <input type="text" id="n2">
+
+        <label for="result">Resultado:</label>
+        <input type="text" id="result">
+        <button id="botao1" type="submit">Somar</button>
+
+        <button id="botao2" type="submit">Multiplicar</button>
+
+        <button id="botao3" type="submit">Subtrair</button>
+
+        <button id="botao4" type="submit">Dividir</button>
+
+    </div>
+
+
+    <script>
+        let n1 = document.getElementById("n1");
+        let n2 = document.getElementById("n2");
+        let r = document.getElementById("result");
+
+        const botao1 = document.getElementById("botao1");
+            botao1.addEventListener('click', function() {
+                r.value = Number(n1.value) + Number(n2.value);
+            }
+        )
+
+        const botao2 = document.getElementById("botao2");
+            botao2.addEventListener('click', function(){
+                r.value = Number(n1.value) * Number(n2.value);
+            }
+        )
+
+         const botao3 = document.getElementById("botao3");
+            botao3.addEventListener('click', function(){
+                r.value = Number(n1.value) - Number(n2.value);
+            }
+        )
+
+         const botao4 = document.getElementById("botao4");
+            botao4.addEventListener('click', function(){
+                r.value = Number(n1.value) / Number(n2.value);
+            }
+        )
+
+    </script>
+</body>
+
+</html>
