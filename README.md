@@ -1,2 +1,1 @@
-# javascrept
-Atividades de JS em pwd.
+Atividades aula de programação web
