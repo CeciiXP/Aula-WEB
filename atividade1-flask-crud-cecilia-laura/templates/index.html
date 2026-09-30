@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <title>Cadastro de eventos</title>
+</head>
+<body>
+<h1>Cadastro de eventos</h1>
+<form action="/cadastrar" method="post">
+    <label for="nome">Nome do evento:</label>
+    <input type="text" id="nome" name="nome" required><br>
+
+    <label for="data">Data do evento:</label>
+    <input type="date" id="data" name="data" required><br>
+
+    <label for="local">Local do evento:</label>
+    <input type="text" id="local" name="local" required><br>
+
+    <label for="descricao">Descrição do evento:</label>
+    <textarea id="descricao" name="descricao" required></textarea><br>
+
+    <label for="organizador">Organizador do evento:</label>
+    <input type="text" id="organizador" name="organizador" required><br>
+
+    <input id="input" type="submit" value="Cadastrar">
+</form>
+
+<p>{{ 2 + 2 }}</p>
+
+<h2>Eventos cadastrados:</h2>
+<ul>
+{% for evento in eventos %}
+  <p>
+    {{ evento.nome }} - {{ evento.data }} - {{ evento.local }}
+
+    <button onclick="window.location.href='/editar/{{ evento.id }}'">
+      Editar
+    </button>
+
+    <button onclick="if(confirm('Tem certeza que deseja apagar este evento?')) { window.location.href='/apagar/{{ evento.id }}'; }">
+      Remover
+    </button>
+  </p>
+{% endfor %}
+</ul>
+</body>
+</html>
